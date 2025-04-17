@@ -1,3 +1,5 @@
+
+//품절
 export function updateSelOpts(ctx) {
   const { sel, productList } = ctx;
 
