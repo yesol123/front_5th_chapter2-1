@@ -1,8 +1,9 @@
-import { defineConfig } from 'vite';
+import { defineConfig } from 'vitest/config';
 import react from '@vitejs/plugin-react';
 import path from 'path';
 
 export default defineConfig({
+  base: '/front_5th_chapter2-1/',
   plugins: [react()],
   build: {
     rollupOptions: {
@@ -13,7 +14,13 @@ export default defineConfig({
     },
   },
   server: {
-    // 기본 열리는 페이지는 원하는 걸로 지정
     open: '/index.html',
+  },
+
+  // ✅ 통합된 vitest 설정
+  test: {
+    globals: true,
+    environment: 'jsdom',
+    setupFiles: 'src/setupTests.ts',
   },
 });
